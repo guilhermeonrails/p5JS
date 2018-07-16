@@ -74,7 +74,10 @@ function perguntar() {
 
 function keyPressed() {
   if (keyCode === ENTER) {
+    if (numeroPergunta <= 3) {
     descobrirNome()
+    }
+    else{}
   }
 }
 
