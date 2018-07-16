@@ -83,11 +83,15 @@ function keyPressed() {
 
 function descobrirNome(){
 	respostaTexto = resposta.value()
-  nome = nome + respostaTexto[0]
-  console.log(nome)
+  if (respostaTexto.includes('.')) 
+  	{console.log('tem ponto')}
+  else{
+    nome = nome + respostaTexto[0]
+    console.log(nome)
+  }
   numeroPergunta ++
-  console.log(numeroPergunta)
-  perguntar()
+    console.log(numeroPergunta)
+    perguntar()
 }
 
 function revelarNome(){
