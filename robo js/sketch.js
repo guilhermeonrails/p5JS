@@ -34,8 +34,8 @@ longas.
 Clique na tela para começar`, 290, 50);
 }
 
-function incluirImagens() {
-  background(imagemDoFundo);
+function incluirImagens(){
+	background(imagemDoFundo);
   image(imagemDoRobo, 220, 200, 150, 150);
   image(imageDoBalao, 145, 10, 300, 200);
 }
@@ -57,8 +57,8 @@ function desenharCena(texto) {
 }
 
 //adicionar caixa de resposta
-function caixaDeResposta() {
-  campoDeResposta.size(450, 20);
+function caixaDeResposta(){
+	campoDeResposta.size(450, 20);
   campoDeResposta.position(85, 360);
   campoDeResposta.elt.placeholder = ('RESPONDA AQUI E PRESSIONE ENTER');
   campoDeResposta.value('');
@@ -88,19 +88,19 @@ function keyPressed() {
 function descobrirNome() {
   let respostaTexto;
   respostaTexto = campoDeResposta.value();
-  if (verificarPonto(respostaTexto)) {
+  if (verificarPonto(respostaTexto)){
     nome = nome + respostaTexto[0];
   }
   numeroPergunta++;
   perguntar();
 }
 
-function verificarPonto(resposta) {
-  return !resposta.includes('.')
+function verificarPonto(resposta){
+	return !resposta.includes('.');
 }
 
 function revelarNome() {
-  campoDeResposta.remove()
-  textSize(50)
-  text(nome, 280, 123)
+  campoDeResposta.remove();
+  textSize(50);
+  text(nome, 280, 123);
 }
