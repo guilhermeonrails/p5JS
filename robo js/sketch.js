@@ -60,26 +60,26 @@ function desenharCena(texto) {
 function caixaDeResposta() {
   campoDeResposta.size(450, 20);
   campoDeResposta.position(85, 360);
-  campoDeResposta.elt.placeholder = 'RESPONDA AQUI E PRESSIONE ENTER';
-  campoDeResposta.value('');
+  campoDeResposta.elt.placeholder = "RESPONDA AQUI E PRESSIONE ENTER";
+  campoDeResposta.value("");
 }
 
 function perguntar() {
   if (numeroPergunta == 1) {
-    desenharCena('Qual seu filme\n preferido?');
+    desenharCena("Qual seu filme\n preferido?");
   } else if (numeroPergunta == 2) {
     desenharCena("Qual seu livro\n preferido?");
   } else if (numeroPergunta == 3) {
     desenharCena("Qual sua fruta\n preferida?");
   } else {
-    desenharCena('Seu nome é ');
+    desenharCena("Seu nome é ");
     revelarNome();
   }
 }
 
 function keyPressed() {
   if (keyCode === ENTER) {
-    if (respostaEstaValida) {
+    if (respostaEstaValida()) {
       descobrirNome();
     }
   }
@@ -95,7 +95,7 @@ function descobrirNome() {
 }
 
 function naoTemPontoFinal(resposta) {
-  return !resposta.includes('.');
+  return !resposta.includes(".");
 }
 
 function revelarNome() {
@@ -104,9 +104,7 @@ function revelarNome() {
   text(nome, 280, 123);
 }
 
-function respostaEstaValida(){
+function respostaEstaValida() {
   let aindaTemPerguntas = numeroPergunta <= 3;
-  let respondeuAPergunta = campoDeResposta.value() != "";
   return aindaTemPerguntas && respondeuAPergunta;
 }
-  
