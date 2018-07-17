@@ -86,8 +86,7 @@ function keyPressed() {
 }
 
 function descobrirNome() {
-  let respostaTexto;
-  respostaTexto = campoDeResposta.value();
+  let respostaTexto = campoDeResposta.value();
   if (verificarPonto(respostaTexto)){
     nome = nome + respostaTexto[0];
   }
