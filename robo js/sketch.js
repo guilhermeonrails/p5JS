@@ -6,7 +6,7 @@ let imagemDoBalao;
 //análise e respostas
 let campoDeResposta;
 let numeroPergunta = 0;
-let nome = '';
+let nome = "";
 
 //carregando as imagens
 function preload() {
@@ -27,15 +27,15 @@ function draw() {
   textSize(15);
   textAlign(CENTER);
   textStyle(BOLD);
-  text(`Seja bem vindo ao Alura Genius!
-Para adivinhar seu nome, responda
-minhas perguntas com frases 
-longas.
-Clique na tela para começar`, 290, 50);
+  text("Seja bem vindo ao Alura Genius! \n" +
+    "Para adivinhar seu nome, responda \n" +
+    "minhas perguntas com frases \n" +
+    "longas. \n" +
+    "Clique na tela para começar", 290, 50);
 }
 
-function incluirImagens(){
-	background(imagemDoFundo);
+function incluirImagens() {
+  background(imagemDoFundo);
   image(imagemDoRobo, 220, 200, 150, 150);
   image(imageDoBalao, 145, 10, 300, 200);
 }
@@ -57,10 +57,10 @@ function desenharCena(texto) {
 }
 
 //adicionar caixa de resposta
-function caixaDeResposta(){
-	campoDeResposta.size(450, 20);
+function caixaDeResposta() {
+  campoDeResposta.size(450, 20);
   campoDeResposta.position(85, 360);
-  campoDeResposta.elt.placeholder = ('RESPONDA AQUI E PRESSIONE ENTER');
+  campoDeResposta.elt.placeholder = 'RESPONDA AQUI E PRESSIONE ENTER';
   campoDeResposta.value('');
 }
 
@@ -79,7 +79,7 @@ function perguntar() {
 
 function keyPressed() {
   if (keyCode === ENTER) {
-    if (numeroPergunta <= 3 && campoDeResposta.value() != '') {
+    if (respostaEstaValida) {
       descobrirNome();
     }
   }
@@ -87,15 +87,15 @@ function keyPressed() {
 
 function descobrirNome() {
   let respostaTexto = campoDeResposta.value();
-  if (verificarPonto(respostaTexto)){
+  if (naoTemPontoFinal(respostaTexto)) {
     nome = nome + respostaTexto[0];
   }
   numeroPergunta++;
   perguntar();
 }
 
-function verificarPonto(resposta){
-	return !resposta.includes('.');
+function naoTemPontoFinal(resposta) {
+  return !resposta.includes('.');
 }
 
 function revelarNome() {
@@ -103,3 +103,10 @@ function revelarNome() {
   textSize(50);
   text(nome, 280, 123);
 }
+
+function respostaEstaValida(){
+  let aindaTemPerguntas = numeroPergunta <= 3;
+  let respondeuAPergunta = campoDeResposta.value() != "";
+  return aindaTemPerguntas && respondeuAPergunta;
+}
+  
