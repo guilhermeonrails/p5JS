@@ -106,5 +106,6 @@ function revelarNome() {
 
 function respostaEstaValida() {
   let aindaTemPerguntas = numeroPergunta <= 3;
+  let respondeuAPergunta = !campoDeResposta.value() == "" 
   return aindaTemPerguntas && respondeuAPergunta;
 }
