@@ -1,12 +1,14 @@
-let fundo;
-let robo;
-let balao;
+//imagens
+let imagemDoFundo;
+let imagemDoRobo;
+let ImagemDoBalao;
 let numeroPergunta = 0;
 
+//carregar imagens
 function preload() {
-    fundo = loadImage("fundo.png");
-    robo = loadImage("robo.png");
-    balao = loadImage("balao.png");
+    imagemDoFundo = loadImage("fundo.png");
+    imagemDoRobo = loadImage("robo.png");
+    ImagemDoBalao = loadImage("balao.png");
 }
 
 function setup() {
@@ -14,9 +16,9 @@ function setup() {
 }
 
 function draw() {
-    background(fundo);
-    image(robo, 150, 200, 150, 150);
-    image(balao, 80, 10, 300, 200);
+    background(imagemDoFundo);
+    image(imagemDoRobo, 220, 200, 150, 150);
+    image(ImagemDoBalao, 150, 10, 300, 200);
     textSize(15);
     textAlign(CENTER);
     textStyle(BOLD);
