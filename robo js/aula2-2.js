@@ -32,10 +32,9 @@ function draw() {
 
 function mousePressed() {
     if (numeroPergunta == 0) {
-        perguntar()
-        numeroPergunta++
-        console.log('clicou')
-        console.log("vamos para a pergunta " + numeroPergunta)
+        numeroPergunta++;
+        console.log('clicou');
+        perguntar();
     }
 }
 

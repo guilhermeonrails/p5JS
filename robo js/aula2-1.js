@@ -30,10 +30,10 @@ function draw() {
 function mousePressed() {
     console.log("clicou");
     if (numeroPergunta == 0) {
-        perguntar();
         numeroPergunta++;
         console.log('clicou');
-        console.log("vamos para a pergunta " + numeroPergunta);
+        // queremos perguntar
+        perguntar();
     }
 }
 
