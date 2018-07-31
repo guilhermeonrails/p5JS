@@ -5,6 +5,7 @@ let imagemDoBalao;
 
 //análise e resposta
 let numeroDaPergunta = 0;
+let caixaDeResposta;
 
 function preload() {
   imagemDoFundo = loadImage("fundo.png");
@@ -15,6 +16,7 @@ function preload() {
 function setup() {
   createCanvas(600, 400);
   noLoop();
+  caixaDeResposta = createInput();
 }
 
 function draw() {
@@ -45,5 +47,11 @@ function perguntar() {
     textAlign(CENTER);
     textStyle(BOLD);
     text("Qual o seu livro \n favorito?", 285, 70);
+    exibirCaixaDeResposta();
   }
+}
+
+function exibirCaixaDeResposta() {
+  caixaDeResposta.position(85, 360);
+  caixaDeResposta.size(450, 20);
 }
